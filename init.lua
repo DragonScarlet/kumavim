@@ -1,0 +1,2 @@
+require("kuma")
+print("Hello")
