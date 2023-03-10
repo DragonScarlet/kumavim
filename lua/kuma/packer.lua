@@ -58,6 +58,9 @@ use {
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
 
+
+use 'nvim-tree/nvim-web-devicons'
+
 use {
   'nvim-tree/nvim-tree.lua',
   requires = {
