@@ -1,11 +1,13 @@
-local lsp = require('lsp-zero').preset({
-  name = 'recommended',
-  set_lsp_keymaps = true,
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
-})
+local lsp = require('lsp-zero')
 
-lsp.setup_servers({'tsserver', 'eslint'})
+lsp.preset("recommended")
+
+
+lsp.ensure_installed({
+	'tsserver',
+	'eslint',
+	'sumneko_lua'
+})
 
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
