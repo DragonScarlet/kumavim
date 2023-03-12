@@ -74,4 +74,11 @@ return require('packer').startup(function(use)
     }
 
     use 'p00f/nvim-ts-rainbow'
+
+    use({
+        "aserowy/tmux.nvim",
+        config = function() return require("tmux").setup() end
+    })
+
+    use 'christoomey/vim-tmux-navigator'
 end)
