@@ -6,7 +6,7 @@ vim.g.loaded_netrwPlugin = 1
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
-vim.api.nvim_set_keymap('n', '<leader>tt', ':NvimTreeToggle<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>pt', ':NvimTreeToggle<CR>', {})
 -- empty setup using defaults
 require("nvim-tree").setup(
     {
@@ -40,8 +40,8 @@ require("nvim-tree").setup(
                     { key = "x",                           action = "remove" }, -- cut
 
                     { key = "t",                           action = "cut" },
-                    { key = "<Space>p",                    action = "prev_diag_item" },
-                    { key = "<Space>.",                    action = "next_diag_item" },
+                    -- { key = "<Space>p",                    action = "prev_diag_item" },
+                    -- { key = "<Space>.",                    action = "next_diag_item" },
                     { key = "<Space>k",                    action = "prev_git_item" },
                     { key = "<Space>j",                    action = "next_git_item" },
                     { key = "u",                           action = "dir_up" },
