@@ -73,7 +73,7 @@ return require('packer').startup(function(use)
         tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
     }
 
-    use 'p00f/nvim-ts-rainbow'
+    --    use 'p00f/nvim-ts-rainbow'
 
     use({
         "aserowy/tmux.nvim",
