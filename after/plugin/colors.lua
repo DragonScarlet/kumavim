@@ -40,6 +40,12 @@ require('rose-pine').setup({
         -- Blend colours against the "base" background
         CursorLine = { bg = 'foam', blend = 10 },
         StatusLine = { fg = 'love', bg = 'love', blend = 10 },
+        TelescopeBorder = { fg = "highlight_high", bg = "none" },
+        TelescopeNormal = { bg = "none" },
+        TelescopePromptNormal = { bg = "base" },
+        TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+        TelescopeSelection = { fg = "text", bg = "base" },
+        TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
     }
 })
 
