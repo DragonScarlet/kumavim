@@ -115,19 +115,19 @@ local config = {
                 runtimes = {
                     {
                         name = "JavaSE-1.8",
-                        path = home .. "/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/",
+                        path = "/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/",
                     },
                     {
                         name = "JavaSE-11",
-                        path = home .. "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/",
+                        path = "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/",
                     },
                     {
                         name = "JavaSE-17",
-                        path = home .. "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home/",
+                        path = "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home/",
                     },
                     {
                         name = "JavaSE-20",
-                        path = home .. "/Library/Java/JavaVirtualMachines/zulu-20.jdk/Contents/Home/",
+                        path = "/Library/Java/JavaVirtualMachines/zulu-20.jdk/Contents/Home/",
                     },
                 }
             }
@@ -139,7 +139,7 @@ local config = {
     -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
     -- for the full list of options
     cmd = {
-        'java',
+        '/Library/Java/JavaVirtualMachines/zulu-20.jdk/Contents/Home/bin/java', -- 'java',
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
         '-Declipse.product=org.eclipse.jdt.ls.core.product',
