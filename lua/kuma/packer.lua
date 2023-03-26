@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
     -- vim.cmd('colorscheme rose-pine')
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-
+    use 'nvim-treesitter/playground'
     use 'mbbill/undotree'
 
     use 'tpope/vim-fugitive'
@@ -92,5 +92,4 @@ return require('packer').startup(function(use)
     -- Java
     use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-jdtls'
-    use 'nvim-lua/plenary.nvim'
 end)
