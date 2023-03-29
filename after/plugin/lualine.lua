@@ -218,6 +218,12 @@ ins_left {
                 if client.name == 'lua_ls' then
                     return ''
                 end
+                if client.name == 'lemminx' then
+                    return '󰗀'
+                end
+                if client.name == 'jsonls' then
+                    return '󰘦'
+                end
                 return client.name
             end
         end
