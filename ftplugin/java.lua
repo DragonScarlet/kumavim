@@ -21,6 +21,7 @@ end
 -- The on_attach function is used to set key maps after the language server
 -- attaches to the current buffer
 local on_attach = function(client, bufnr)
+    jdtls.setup_dap({ hotcodereplace = 'auto' })
     -- Regular Neovim LSP client keymappings
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     nnoremap('gD', vim.lsp.buf.declaration, bufopts, "Go to declaration")
@@ -47,6 +48,11 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('v', "<space>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
         { noremap = true, silent = true, buffer = bufnr, desc = "Extract method" })
 end
+
+local bundles = {
+    vim.fn.glob(
+        '/Users/U127215/javaDebug/java-debug-main/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar'),
+}
 
 local config = {
     flags = {
