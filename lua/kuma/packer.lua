@@ -83,7 +83,7 @@ return require('packer').startup(function(use)
     use 'christoomey/vim-tmux-navigator'
 
 
-    use 'github/copilot.vim'
+    --    use 'github/copilot.vim'
     use { 'stevearc/dressing.nvim' }
     use {
         'lewis6991/gitsigns.nvim',
