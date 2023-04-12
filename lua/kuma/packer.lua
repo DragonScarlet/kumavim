@@ -73,7 +73,7 @@ return require('packer').startup(function(use)
         tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
     }
 
-    --    use 'p00f/nvim-ts-rainbow'
+    use 'p00f/nvim-ts-rainbow'
 
     use({
         "aserowy/tmux.nvim",
@@ -92,4 +92,17 @@ return require('packer').startup(function(use)
     -- Java
     use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-jdtls'
+    -- Packer
+    use({
+        "jackMort/ChatGPT.nvim",
+        config = function()
+            require("chatgpt").setup()
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    })
+    use 'echasnovski/mini.nvim'
 end)
