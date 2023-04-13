@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
     use "nvim-lua/plenary.nvim"
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use({ 'rose-pine/neovim', as = 'rose-pine' })
@@ -57,9 +56,9 @@ return require('packer').startup(function(use)
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+            'nvim-tree/nvim-web-devicons',
         },
-        tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
+        tag = 'nightly'
     }
     use 'p00f/nvim-ts-rainbow'
     use({
@@ -67,16 +66,13 @@ return require('packer').startup(function(use)
         config = function() return require("tmux").setup() end
     })
     use 'christoomey/vim-tmux-navigator'
-    --    use 'github/copilot.vim'
     use { 'stevearc/dressing.nvim' }
     use {
         'lewis6991/gitsigns.nvim',
-        -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
     -- Java
     use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-jdtls'
-    -- Packer
     use({
         "jackMort/ChatGPT.nvim",
         config = function()
@@ -88,21 +84,25 @@ return require('packer').startup(function(use)
             "nvim-telescope/telescope.nvim"
         }
     })
+
+    -- Mini
     use 'echasnovski/mini.nvim'
+
+    -- Noice
     use({
         "folke/noice.nvim",
         config = function()
             require("noice").setup({
-                -- add any options here
             })
         end,
         requires = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
         }
     })
+
+    -- Prettier
+    use('neovim/nvim-lspconfig')
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
 end)
