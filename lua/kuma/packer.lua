@@ -8,25 +8,19 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
-
     use "nvim-lua/plenary.nvim"
-
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use 'folke/tokyonight.nvim'
     -- vim.cmd('colorscheme rose-pine')
-
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use 'nvim-treesitter/playground'
     use 'mbbill/undotree'
-
     use 'tpope/vim-fugitive'
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -49,22 +43,17 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' }, -- Optional
         }
     }
-
     use {
         'goolord/alpha-nvim',
         config = function()
             require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         end
     }
-
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-
-
     use 'nvim-tree/nvim-web-devicons'
-
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -72,17 +61,12 @@ return require('packer').startup(function(use)
         },
         tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
     }
-
     use 'p00f/nvim-ts-rainbow'
-
     use({
         "aserowy/tmux.nvim",
         config = function() return require("tmux").setup() end
     })
-
     use 'christoomey/vim-tmux-navigator'
-
-
     --    use 'github/copilot.vim'
     use { 'stevearc/dressing.nvim' }
     use {
