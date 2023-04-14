@@ -10,7 +10,7 @@ require("tokyonight").setup({
         -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = true },
         keywords = { italic = true },
-        functions = {},
+        functions = { bold = true },
         variables = {},
         -- Background styles. Can be "dark", "transparent" or "normal"
         sidebars = "transparent",     -- style for sidebars, see below
@@ -25,6 +25,7 @@ require("tokyonight").setup({
     --- function will be called with a ColorScheme table
     ---@param colors ColorScheme
     on_colors = function(colors)
+        colors.fg = "#f0c0f5"
     end,
     --- You can override specific highlights to use other groups or a hex color
     --- function will be called with a Highlights and ColorScheme table
