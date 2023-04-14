@@ -1,6 +1,6 @@
 local jdtls = require('jdtls')
 --- Helper function for creating keymaps
-function nnoremap(rhs, lhs, bufopts, desc)
+local nnoremap2 = function(rhs, lhs, bufopts, desc)
     bufopts.desc = desc
     vim.keymap.set("n", rhs, lhs, bufopts)
 end
@@ -11,27 +11,27 @@ local on_attach = function(client, bufnr)
     jdtls.setup_dap({ hotcodereplace = 'auto' })
     -- Regular Neovim LSP client keymappings
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    nnoremap('gD', vim.lsp.buf.declaration, bufopts, "Go to declaration")
-    nnoremap('gd', vim.lsp.buf.definition, bufopts, "Go to definition")
-    nnoremap('gi', vim.lsp.buf.implementation, bufopts, "Go to implementation")
-    nnoremap('K', vim.lsp.buf.hover, bufopts, "Hover text")
-    nnoremap('<C-k>', vim.lsp.buf.signature_help, bufopts, "Show signature")
-    nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, bufopts, "Add workspace folder")
-    nnoremap('<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts, "Remove workspace folder")
-    nnoremap('<space>wl', function()
+    nnoremap2('gD', vim.lsp.buf.declaration, bufopts, "Go to declaration")
+    nnoremap2('gd', vim.lsp.buf.definition, bufopts, "Go to definition")
+    nnoremap2('gi', vim.lsp.buf.implementation, bufopts, "Go to implementation")
+    nnoremap2('K', vim.lsp.buf.hover, bufopts, "Hover text")
+    nnoremap2('<C-k>', vim.lsp.buf.signature_help, bufopts, "Show signature")
+    nnoremap2('<space>wa', vim.lsp.buf.add_workspace_folder, bufopts, "Add workspace folder")
+    nnoremap2('<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts, "Remove workspace folder")
+    nnoremap2('<space>wl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts, "List workspace folders")
-    nnoremap('<space>D', vim.lsp.buf.type_definition, bufopts, "Go to type definition")
-    nnoremap('<space>rn', vim.lsp.buf.rename, bufopts, "Rename")
-    nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
+    nnoremap2('<space>D', vim.lsp.buf.type_definition, bufopts, "Go to type definition")
+    nnoremap2('<space>rn', vim.lsp.buf.rename, bufopts, "Rename")
+    nnoremap2('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
     vim.keymap.set('v', "<space>ca", "<ESC><CMD>lua vim.lsp.buf.range_code_action()<CR>",
         { noremap = true, silent = true, buffer = bufnr, desc = "Code actions" })
-    nnoremap('<space>f', function() vim.lsp.buf.format { async = true } end, bufopts, "Format file")
+    nnoremap2('<space>f', function() vim.lsp.buf.format { async = true } end, bufopts, "Format file")
 
     -- Java extensions provided by jdtls
-    nnoremap("<C-o>", jdtls.organize_imports, bufopts, "Organize imports")
-    nnoremap("<space>ev", jdtls.extract_variable, bufopts, "Extract variable")
-    nnoremap("<space>ec", jdtls.extract_constant, bufopts, "Extract constant")
+    nnoremap2("<C-o>", jdtls.organize_imports, bufopts, "Organize imports")
+    nnoremap2("<space>ev", jdtls.extract_variable, bufopts, "Extract variable")
+    nnoremap2("<space>ec", jdtls.extract_constant, bufopts, "Extract constant")
     vim.keymap.set('v', "<space>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
         { noremap = true, silent = true, buffer = bufnr, desc = "Extract method" })
 end
