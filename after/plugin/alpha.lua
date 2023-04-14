@@ -12,14 +12,12 @@ dashboard.section.header.val = {
     "       :          :      ",
     "       :          :      ",
     " -ctr- `._m____m_,'      ",
-    "                         ",
-    "      --- 熊ビム ---     ",
 }
 
 -- Set menu
 dashboard.section.buttons.val = {
     dashboard.button("p", "   Open Project", ":ene <BAR> NvimTreeToggle <CR>"),
-    dashboard.button("e", "   New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("n", "   Notes", ":e $HOME/notes/TODOS.txt <BAR> NvimTreeToggle <CR>"),
     dashboard.button("f", "   Find file", ":Telescope find_files<CR>"),
     dashboard.button("r", "   Recent", ":Telescope oldfiles<CR>"),
     dashboard.button("s", "   Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
@@ -40,7 +38,10 @@ dashboard.section.buttons.val = {
 --   end)
 --   ```
 -- local fortune = require("alpha.fortune")
--- dashboard.section.footer.val = fortune()
+dashboard.section.footer.val = {
+    "      --- 熊ビム ---     ",
+}
+
 
 -- Send config to alpha
 alpha.setup(dashboard.opts)
