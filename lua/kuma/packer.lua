@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
         'lewis6991/gitsigns.nvim',
     }
     -- Java
-    use 'mfussenegger/nvim-dap'
+    -- use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-jdtls'
     use({
         "jackMort/ChatGPT.nvim",
@@ -114,6 +114,12 @@ return require('packer').startup(function(use)
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
             }
+        end
+    }
+    use {
+        "klen/nvim-test",
+        config = function()
+            require('nvim-test').setup()
         end
     }
 end)
