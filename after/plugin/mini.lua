@@ -1,5 +1,5 @@
 -- require('mini.animate').setup()
-require('mini.indentscope').setup()
-require('mini.cursorword').setup()
+-- require('mini.indentscope').setup()
+-- require('mini.cursorword').setup()
 -- require('mini.completion').setup()
-require('mini.trailspace').setup()
+-- require('mini.trailspace').setup()
