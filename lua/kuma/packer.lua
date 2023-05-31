@@ -134,4 +134,6 @@ return require('packer').startup(function(use)
             })
         end
     }
+    -- packer
+    use { 'taybart/b64.nvim' }
 end)
