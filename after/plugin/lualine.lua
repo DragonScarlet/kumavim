@@ -224,6 +224,9 @@ ins_left {
                 if client.name == 'jsonls' then
                     return '󰘦'
                 end
+                if client.name == 'tsserver' then
+                    return ''
+                end
                 return client.name
             end
         end
