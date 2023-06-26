@@ -227,6 +227,9 @@ ins_left {
                 if client.name == 'tsserver' then
                     return ''
                 end
+                if client.name == 'pylsp' then
+                    return '󰌠'
+                end
                 return client.name
             end
         end
