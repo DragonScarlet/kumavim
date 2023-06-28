@@ -35,29 +35,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('v', "<space>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
         { noremap = true, silent = true, buffer = bufnr, desc = "Extract method" })
 
-    -- nvim-dap
-    nnoremap2("<space>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Set breakpoint")
-    nnoremap2("<space>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
-        "Set conditional breakpoint")
-    nnoremap2("<space>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
-        "Set log point")
-    nnoremap2('<space>br', "<cmd>lua require'dap'.clear_breakpoints()<cr>", "Clear breakpoints")
-    nnoremap2('<space>ba', '<cmd>Telescope dap list_breakpoints<cr>', "List breakpoints")
-
-    nnoremap2("<space>dc", "<cmd>lua require'dap'.continue()<cr>", "Continue")
-    nnoremap2("<space>dj", "<cmd>lua require'dap'.step_over()<cr>", "Step over")
-    nnoremap2("<space>dk", "<cmd>lua require'dap'.step_into()<cr>", "Step into")
-    nnoremap2("<space>do", "<cmd>lua require'dap'.step_out()<cr>", "Step out")
-    nnoremap2('<space>dd', "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect")
-    nnoremap2('<space>dt', "<cmd>lua require'dap'.terminate()<cr>", "Terminate")
-    nnoremap2("<space>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", "Open REPL")
-    nnoremap2("<space>dl", "<cmd>lua require'dap'.run_last()<cr>", "Run last")
-    nnoremap2('<space>di', function() require "dap.ui.widgets".hover() end, "Variables")
-    nnoremap2('<space>d?', function()
-        local widgets = require "dap.ui.widgets"; widgets.centered_float(widgets.scopes)
-    end, "Scopes")
-    nnoremap2('<space>df', '<cmd>Telescope dap frames<cr>', "List frames")
-    nnoremap2('<space>dh', '<cmd>Telescope dap commands<cr>', "List commands")
     nnoremap2("<space>vc", jdtls.test_class, bufopts, "Test class (DAP)")
     nnoremap2("<space>vm", jdtls.test_nearest_method, bufopts, "Test method (DAP)")
 end
