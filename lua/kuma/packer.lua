@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
         'lewis6991/gitsigns.nvim',
     }
     -- Java
-    -- use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-jdtls'
     use({
         "jackMort/ChatGPT.nvim",
@@ -136,4 +136,12 @@ return require('packer').startup(function(use)
     }
     -- packer
     use { 'taybart/b64.nvim' }
+    use({
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v1.2.1", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
+use "rafamadriz/friendly-snippets"
 end)
