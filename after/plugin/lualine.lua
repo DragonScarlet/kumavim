@@ -203,6 +203,16 @@ ins_left {
 ins_left {
     -- Lsp server name .
     function()
+        local icons = {
+            jdtls = '',
+            lua_ls = '',
+            lemminx = '󰗀',
+            jsonls = '󰘦',
+            tsserver = '',
+            pylsp = '󰌠',
+            docker_compose_language_service = '',
+            yamlls = '',
+        }
         local msg = '󰊗'
         local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
         local clients = vim.lsp.get_active_clients()
@@ -212,23 +222,8 @@ ins_left {
         for _, client in ipairs(clients) do
             local filetypes = client.config.filetypes
             if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                if client.name == 'jdtls' then
-                    return ''
-                end
-                if client.name == 'lua_ls' then
-                    return ''
-                end
-                if client.name == 'lemminx' then
-                    return '󰗀'
-                end
-                if client.name == 'jsonls' then
-                    return '󰘦'
-                end
-                if client.name == 'tsserver' then
-                    return ''
-                end
-                if client.name == 'pylsp' then
-                    return '󰌠'
+                if icons[client.name] ~= nil then
+                    return icons[client.name]
                 end
                 return client.name
             end
